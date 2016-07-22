@@ -35,7 +35,8 @@ namespace C5Form
             // PowerCollections
             Deque<Auto> dqAuto = new Deque<Auto>();
             BigList<Auto> blAuto = new BigList<Auto>();
-            
+            HashBag<Auto> hbAuto = new HashBag<Auto>();
+
 
 
         }
