@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace C5Form.InternalClasses
+namespace MyTest.InternalClasses
 {
     class Person
     {

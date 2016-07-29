@@ -1,4 +1,4 @@
-﻿namespace C5Form
+﻿namespace MyTest
 {
     partial class MainForm
     {

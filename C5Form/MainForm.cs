@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 using C5;
 using Wintellect.PowerCollections;
 using System.Windows.Forms;
-using C5Form.InternalClasses;
+using MyTest.InternalClasses;
 
-namespace C5Form
+namespace MyTest
 {
     public partial class MainForm : Form
     {
@@ -28,14 +28,14 @@ namespace C5Form
         private void btnStart_Click(object sender, EventArgs e)
         {
             // C5
-            ArrayList<Person> alsPerson = new ArrayList<Person>();
-            C5.LinkedList<Person> llsPerson = new C5.LinkedList<Person>();
+            ArrayList<IndexedObjects.Person> alsPerson = new ArrayList<IndexedObjects.Person>();
+            C5.LinkedList<IndexedObjects.Person> llsPerson = new C5.LinkedList<IndexedObjects.Person>();
 
 
             // PowerCollections
-            Deque<Auto> dqAuto = new Deque<Auto>();
-            BigList<Auto> blAuto = new BigList<Auto>();
-            HashBag<Auto> hbAuto = new HashBag<Auto>();
+            Deque<InternalClasses.Auto> dqAuto = new Deque<InternalClasses.Auto>();
+            BigList<InternalClasses.Auto> blAuto = new BigList<InternalClasses.Auto>();
+            HashBag<InternalClasses.Auto> hbAuto = new HashBag<InternalClasses.Auto>();
 
 
 
