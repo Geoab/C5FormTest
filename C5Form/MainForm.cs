@@ -6,15 +6,17 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using C5;
-using Wintellect.PowerCollections;
+using BC = C5;
 using System.Windows.Forms;
+using PC = Wintellect.PowerCollections;
 using MyTest.InternalClasses;
+using MoreLinq;
 
 namespace MyTest
 {
     public partial class MainForm : Form
     {
+        BC.ArrayList<Person> alsPerson = new BC.ArrayList<Person>();
         public MainForm()
         {
             InitializeComponent();
@@ -28,17 +30,19 @@ namespace MyTest
         private void btnStart_Click(object sender, EventArgs e)
         {
             // C5
-            ArrayList<IndexedObjects.Person> alsPerson = new ArrayList<IndexedObjects.Person>();
-            C5.LinkedList<IndexedObjects.Person> llsPerson = new C5.LinkedList<IndexedObjects.Person>();
 
+            alsPerson.Add(new Person() { PersonId = 1, PersonBirthDay = Convert.ToDateTime("1985-04-11"), PersonCode = "11048510981", PersonFirstName = "Vasja", PersonLasttName = "Krjuk" });
+            alsPerson.Add(new Person() { PersonId = 2, PersonBirthDay = Convert.ToDateTime("1970-09-01"), PersonCode = "01097010881", PersonFirstName = "Fedja", PersonLasttName = "Zilberman" });
+            alsPerson.Add(new Person() { PersonId = 3, PersonBirthDay = Convert.ToDateTime("1954-11-21"), PersonCode = "21115410971", PersonFirstName = "Kolja", PersonLasttName = "Treskov" });
+            alsPerson.Add(new Person() { PersonId = 4, PersonBirthDay = Convert.ToDateTime("1979-07-05"), PersonCode = "05077913621", PersonFirstName = "Zjama", PersonLasttName = "Shifman" });
+            this.grdPerson.DataSource = alsPerson;
+        }
 
-            // PowerCollections
-            Deque<InternalClasses.Auto> dqAuto = new Deque<InternalClasses.Auto>();
-            BigList<InternalClasses.Auto> blAuto = new BigList<InternalClasses.Auto>();
-            HashBag<InternalClasses.Auto> hbAuto = new HashBag<InternalClasses.Auto>();
-
-
-
+        private void btnShufle_Click(object sender, EventArgs e)
+        {
+            alsPerson.Shuffle();
+            this.grdPerson.DataSource = alsPerson;
+            this.Refresh();
         }
     }
 }
